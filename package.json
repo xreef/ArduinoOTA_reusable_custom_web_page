@@ -1,0 +1,19 @@
+{
+  "name": "otawebpages",
+  "version": "1.0.0",
+  "description": "Some custom ArduinoOTA pages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "delete_dist": "node ./script/delete.js",
+    "minify": "html-minifier --input-dir ./src --output-dir ./minified --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true --file-ext html\n",
+    "zip_file": "node ./script/zip.js",
+    "dist": "npm run delete_dist && npm run minify && npm run zip_file"
+  },
+  "author": "Renzo Mischianti",
+  "license": "ISC",
+  "devDependencies": {
+    "html-minifier": "^4.0.0",
+    "tar": "^6.1.11"
+  }
+}
